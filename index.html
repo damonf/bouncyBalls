@@ -6,21 +6,29 @@
     <link href="style.css" rel="stylesheet"/>
   </head>
   <body>
-    <canvas id="canvas" width="500" height="400">
-      Your browser does not support the <code>canvas</code> element.
-    </canvas>
+    <div id="bouncyBalls">
+      <canvas id="canvas" width="0" height="0">
+        Your browser does not support the <code>canvas</code> element.
+      </canvas>
+    </div>
     <script src="http://code.jquery.com/jquery-2.0.0.js"></script> 
     <script src="ns.js"></script>
+    <script src="ball.js"></script>
     <script src="balls.js"></script>
     <script>
       $(function() {
         var canvas = $('#canvas')[0];
-        var balls = new ns.Balls({ left: 0, top: 0, right: canvas.width, bottom: canvas.height }, { num: 5 });
         var ctx = canvas.getContext('2d');
+        ctx.canvas.width  = window.innerWidth;
+        ctx.canvas.height = window.innerHeight;
+
+        var balls = new ns.Balls({ left: 0, top: 0, right: canvas.width, bottom: canvas.height }, { num: 15 });
 
         setInterval(function() {
+          ctx.canvas.width  = window.innerWidth;
+          ctx.canvas.height = window.innerHeight;
           ctx.clearRect(0, 0, canvas.width, canvas.height);
-          balls.move();
+          balls.move({ left: 0, top: 0, right: canvas.width, bottom: canvas.height });
           balls.draw(ctx);
         },1000/60);
 
