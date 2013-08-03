@@ -1,4 +1,4 @@
 bouncyBalls
 ===========
 
-my html5 canvas experiment
+Bouncing balls using html5 canvas.

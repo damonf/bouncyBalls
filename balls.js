@@ -31,6 +31,8 @@
   }
 
   function Balls(boundingRect, options) {
+    /*jshint eqnull: true */
+
     if (!(this instanceof Balls)) { 
       return new Balls();
     }
@@ -38,6 +40,15 @@
     options = $.extend({
       num: 1 
     }, options || {});
+
+    if (boundingRect.left == null)
+      throw new Error('boundingRect.left must have a value');
+    if (boundingRect.top == null)
+      throw new Error('boundingRect.top must have a value');
+    if (boundingRect.right == null)
+      throw new Error('boundingRect.right must have a value');
+    if (boundingRect.bottom == null)
+      throw new Error('boundingRect.bottom must have a value');
 
     var cX = (boundingRect.right - boundingRect.left) / 2;
     var cY = (boundingRect.bottom - boundingRect.top) / 2;
