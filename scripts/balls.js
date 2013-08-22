@@ -1,7 +1,7 @@
-/*jshint indent: 2,strict: true,jquery: true */
-/*globals ns: false, Ball: false*/
+/*jshint indent: 2,strict: true,undef: true*/
+/*globals define: false*/
 
-(function () {
+define(['jquery', 'ball'], function ($, Ball) {
 
   "use strict";
 
@@ -16,7 +16,7 @@
 
       vel += inc;
 
-      balls.push(new ns.Ball({
+      balls.push(new Ball({
         xPos: startPos.x,
         yPos: startPos.y,
         xVel: vel,
@@ -69,6 +69,6 @@
     }
   };
 
-  ns.Balls = Balls;
+  return Balls;
 
-}());
+});

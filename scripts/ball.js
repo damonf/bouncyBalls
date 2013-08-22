@@ -1,7 +1,7 @@
-/*jshint indent: 2,strict: true,jquery: true */
-/*globals ns: false*/
+/*jshint indent: 2,strict: true,undef: true*/
+/*globals define: false*/
 
-(function () {
+define(['jquery'], function($) {
 
   "use strict";
 
@@ -79,7 +79,8 @@
     ctx.closePath();  
   };
 
-  ns.Ball = Ball;
+  return Ball;
 
-}());
+});
+
 
