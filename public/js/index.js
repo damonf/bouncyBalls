@@ -15,8 +15,9 @@ requirejs(['jquery', 'balls'], function($, Balls) {
   var ctx = canvas.getContext('2d');
   ctx.canvas.width  = window.innerWidth;
   ctx.canvas.height = window.innerHeight;
-
-  var balls = new Balls({ left: 0, top: 0, right: canvas.width, bottom: canvas.height }, { num: 20 });
+  
+  var balls = new Balls({ left: 0, top: 1, right: canvas.width, bottom: canvas.height },
+                        { num: 20, radius: 10 });
 
   window.setInterval(function() {
 

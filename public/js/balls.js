@@ -5,14 +5,14 @@ define(['jquery', 'ball'], function ($, Ball) {
 
   "use strict";
 
-  function createBalls(startPos, num) {
+  function createBalls(startPos, options) {
 
     var balls = [];
 
     var inc = 1;
-    var vel = -(num / 2);
+    var vel = -(options.num / 2);
     
-    for (var i = 0; i < num; i++) {
+    for (var i = 0; i < options.num; i++) {
 
       vel += inc;
 
@@ -22,7 +22,7 @@ define(['jquery', 'ball'], function ($, Ball) {
         xVel: vel,
         yVel: -4,
         moveDelay: i * 3,
-        radius: 10,
+        radius: options.radius,
         gravity: 0.1
       }));
     }
@@ -38,7 +38,8 @@ define(['jquery', 'ball'], function ($, Ball) {
     }
 
     options = $.extend({
-      num: 1 
+      num: 1,
+      radius: 10 
     }, options || {});
 
     if (boundingRect.left == null)
@@ -53,7 +54,7 @@ define(['jquery', 'ball'], function ($, Ball) {
     var cX = (boundingRect.right - boundingRect.left) / 2;
     var cY = (boundingRect.bottom - boundingRect.top) / 2;
 
-    this._balls = createBalls({ x: cX, y: cY }, options.num);
+    this._balls = createBalls({ x: cX, y: cY }, options);
     this._gravity = 0.1;
   }
 
