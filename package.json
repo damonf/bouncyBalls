@@ -17,5 +17,8 @@
   "author": "",
   "license": "BSD",
   "readmeFilename": "README.md",
-  "gitHead": "56c2f39609c6a64475bf9f81a924f48a3983a7e8"
+  "gitHead": "56c2f39609c6a64475bf9f81a924f48a3983a7e8",
+  "dependencies": {
+    "express": "~3.4.0"
+  }
 }
