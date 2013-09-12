@@ -5,6 +5,10 @@ html, body {
   overflow: hidden;
 }
 
+.controls {
+  margin: 0;
+}
+
 .bounce-area {
   background: #222222;
 }
