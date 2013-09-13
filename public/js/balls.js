@@ -20,7 +20,7 @@ define(['jquery', 'ball'], function ($, Ball) {
         xPos: startPos.x,
         yPos: startPos.y,
         xVel: vel,
-        yVel: -4,
+        yVel: -options.velocity,
         moveDelay: i * 3,
         radius: options.radius,
         gravity: options.gravity
@@ -40,7 +40,8 @@ define(['jquery', 'ball'], function ($, Ball) {
     options = $.extend({
       num: 1,
       radius: 10,
-      gravity: 0 
+      gravity: 0,
+      velocity: 4 
     }, options || {});
 
     if (boundingRect.left == null)

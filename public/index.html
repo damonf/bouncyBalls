@@ -8,19 +8,40 @@
     <link href="css/style.css" rel="stylesheet"/>
   </head>
   <body>
-<div class="controls panel panel-default">
-  <div class="panel-body">
-    <form role="form">
-      <div class="form-group">
-        <label for="gravity">gravity slider</label>
-        <input id="gravity" name="gravity" type="range" min="1" max="100" value="2" >
+    <div class="controls panel panel-default">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-3">
+            <form role="form">
+              <div class="form-group">
+                <label for="gravity">gravity slider</label>
+                <input id="gravity" name="gravity" type="range" min="1" max="100" value="10" >
+              </div>
+            </form>
+          </div>
+          <div class="col-md-9">
+            <form class="form-inline" role="form">
+              <div class="form-group">
+                <label for="balls">Number of balls</label>
+                <input id="balls" name="balls" type="number" class="form-control" min="1" value="20">
+              </div>
+              <div class="form-group">
+                <label for="velocity">Launch velocity</label>
+                <input id="velocity" name="velocity" type="number" class="form-control" min="1" value="4">
+              </div>
+              <div class="form-group">
+                <label for="size">Ball size</label>
+                <input id="size" name="size" type="number" class="form-control" min="1" value="10">
+              </div>
+            </form>
+            <button id="reset" type="button" class="btn btn-default">Launch</button>
+          </div>
+        </div>
       </div>
-    </form>
-  </div>
-</div>
+    </div>
     <div class="bounce-area">
       <canvas id="canvas" width="0" height="0">
-        Your browser does not support the <code>canvas</code> element.
+      Your browser does not support the <code>canvas</code> element.
       </canvas>
     </div>
     <script data-main="js/index.js" src="js/lib/require.js"></script>
