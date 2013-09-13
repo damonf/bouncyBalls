@@ -52,7 +52,6 @@ define(['jquery'], function($) {
 
     this._xPos += this._xVel;
     this._yPos += this._yVel;
-    this._yVel += this._gravity;
 
     this._xVel -= this._xVel * this._airFriction;
     this._yVel -= this._yVel * this._airFriction;
@@ -68,7 +67,11 @@ define(['jquery'], function($) {
 
       this._yVel -= Math.min(1 / this._yVel, this._yVel); 
       this._yVel *= -1;
+      console.log(this._yVel);
     }
+
+    if (this._yPos + this._radius < boundingRect.bottom)
+      this._yVel += this._gravity;
   };
 
   Ball.prototype.draw = function (ctx) {
@@ -77,6 +80,10 @@ define(['jquery'], function($) {
     ctx.fillStyle = this._color;
     ctx.fill();  
     ctx.closePath();  
+  };
+
+  Ball.prototype.gravity = function (g) {
+    this._gravity = g;
   };
 
   return Ball;

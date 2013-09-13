@@ -1,4 +1,4 @@
 
 - add a form at the top
-  - live: gravity, wind speed/direction
+  - live: wind speed/direction
   - reset: number of balls, launch velocity, ball size

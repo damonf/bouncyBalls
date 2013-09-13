@@ -9,6 +9,10 @@ html, body {
   margin: 0;
 }
 
+input[type="range"] {
+  display: block;
+}
+
 .bounce-area {
   background: #222222;
 }

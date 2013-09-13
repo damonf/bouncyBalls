@@ -17,7 +17,12 @@ requirejs(['jquery', 'balls'], function($, Balls) {
   ctx.canvas.height = window.innerHeight - $('.controls').outerHeight(true);
   
   var balls = new Balls({ left: 0, top: 1, right: canvas.width, bottom: canvas.height },
-                        { num: 20, radius: 10 });
+                        { num: 20, radius: 10, gravity: 0.1 });
+
+  $('#gravity').on('change', function (event) {
+    var g = (parseFloat(this.value) - 1) / 100.0;
+    balls.gravity(g);
+  });
 
   window.setInterval(function() {
 

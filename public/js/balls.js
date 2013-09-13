@@ -23,7 +23,7 @@ define(['jquery', 'ball'], function ($, Ball) {
         yVel: -4,
         moveDelay: i * 3,
         radius: options.radius,
-        gravity: 0.1
+        gravity: options.gravity
       }));
     }
 
@@ -39,7 +39,8 @@ define(['jquery', 'ball'], function ($, Ball) {
 
     options = $.extend({
       num: 1,
-      radius: 10 
+      radius: 10,
+      gravity: 0 
     }, options || {});
 
     if (boundingRect.left == null)
@@ -67,6 +68,12 @@ define(['jquery', 'ball'], function ($, Ball) {
   Balls.prototype.draw = function (ctx) {
     for (var i = 0; i < this._balls.length; i++) {
       this._balls[i].draw(ctx);
+    }
+  };
+
+  Balls.prototype.gravity = function (g) {
+    for (var i = 0; i < this._balls.length; i++) {
+      this._balls[i].gravity(g);
     }
   };
 
